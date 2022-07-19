@@ -1,38 +1,91 @@
-.App {
+.container {
+  margin: 5rem auto;
+  background-color: white;
+  border-radius: 9px;
+  overflow: hidden;
+  width: 80rem;
+  height: 50rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+}
+.flex-container__vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.8rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.player {
+  background-color: rgba(255, 111, 72, 0.348);
+  color: rgba(0, 0, 0, 0.2);
+}
+.active {
+  background-color: rgba(72, 90, 255, 0.348);
+  color: rgba(0, 0, 0, 1);
+}
+
+.player-name {
+  font-size: 4.8rem;
+  font-weight: 300;
+  letter-spacing: 3px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.total-score {
+  font-size: 8.4rem;
+  font-weight: 300;
+  color: rgba(255, 68, 0, 0.619);
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.current-score {
+  margin: 0 auto;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: orangered;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.current-score p {
+  transform: translateY(-0.25rem);
+  font-size: 3.2rem;
+  line-height: 7rem;
 }
 
-.App-link {
-  color: #61dafb;
+.dice-container {
+  background: rgba(255, 68, 0, 0.619);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  height: 8rem;
+  width: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  border: none;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 68, 0, 0.5);
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+button:active {
+  background-color: rgba(255, 68, 0, 1);
+}
+
+.dice {
+  width: 6.4rem;
+}
+
+.hidden {
+  display: none;
 }
