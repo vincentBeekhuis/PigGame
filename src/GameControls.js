@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import dice1 from './assets/Dice-1-b.svg';
 import dice2 from './assets/Dice-2-b.svg';
 import dice3 from './assets/Dice-3-b.svg';
@@ -9,13 +9,11 @@ import dice6 from './assets/Dice-6-b.svg';
 const dices = [dice1, dice2, dice3, dice4, dice5, dice6];
 
 const GameControls = (props) => {
-  //States
-  const [gameStarted, setGameStarted] = useState(false);
   // Refs
   const imgRef = useRef();
 
   const rollDice = (e) => {
-    setGameStarted(true);
+    props.onStartGame(true);
     const diceRoll = Number(Math.ceil(Math.random() * 6));
     imgRef.current.src = dices[diceRoll - 1];
 
@@ -39,7 +37,7 @@ const GameControls = (props) => {
       <div className='dice-container'>
         <img
           src=''
-          className={`dice ${!gameStarted ? 'hidden' : ''}`}
+          className={`dice ${!props.gameStarted ? 'hidden' : ''}`}
           ref={imgRef}
           alt='dice'
         />

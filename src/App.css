@@ -22,11 +22,11 @@
 }
 
 .player {
-  background-color: rgba(255, 111, 72, 0.348);
+  background-color: #fff4e6;
   color: rgba(0, 0, 0, 0.2);
 }
 .active {
-  background-color: rgba(72, 90, 255, 0.348);
+  background-color: #fff;
   color: rgba(0, 0, 0, 1);
 }
 
@@ -40,16 +40,17 @@
 .total-score {
   font-size: 8.4rem;
   font-weight: 300;
-  color: rgba(255, 68, 0, 0.619);
+  color: #ff922b;
   text-align: center;
 }
 
 .current-score {
   margin: 0 auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
-  background: orangered;
+  background: #ff922b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +62,7 @@
 }
 
 .dice-container {
-  background: rgba(255, 68, 0, 0.619);
+  background: #ffa94d;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   height: 8rem;
   width: 8rem;
@@ -74,12 +75,18 @@
 button {
   border: none;
   padding: 1rem 2rem;
-  background-color: rgba(255, 68, 0, 0.5);
+  background-color: #ffa94d;
   font-size: 1.4rem;
   font-weight: 300;
+  border-radius: 9px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+button:active,
+button:hover {
+  background-color: #ff922b;
 }
 button:active {
-  background-color: rgba(255, 68, 0, 1);
+  transform: translateY(0.5px);
 }
 
 .dice {
@@ -88,4 +95,29 @@ button:active {
 
 .hidden {
   display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 30vh;
+  left: 30vw;
+  width: 60rem;
+  z-index: 100;
+  border-radius: 9px;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
 }
