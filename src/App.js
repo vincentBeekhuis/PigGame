@@ -19,6 +19,7 @@ function App() {
     playerScore: 0,
     playerTotalScore: 0,
   });
+  const winningNumber = 100;
 
   const resetGame = () => {
     setPlayerOne({
@@ -54,7 +55,10 @@ function App() {
   const updatePlayerScore = (score) => {
     if (+activePlayer === 1) {
       setPlayerOne((prevState) => {
-        if (prevState.playerTotalScore + prevState.playerScore + score > 20) {
+        if (
+          prevState.playerTotalScore + prevState.playerScore + score >=
+          winningNumber
+        ) {
           setWinner(1);
         }
         return {
@@ -65,7 +69,10 @@ function App() {
     }
     if (+activePlayer === 2) {
       setPlayerTwo((prevState) => {
-        if (prevState.playerTotalScore + prevState.playerScore + score > 20) {
+        if (
+          prevState.playerTotalScore + prevState.playerScore + score >=
+          winningNumber
+        ) {
           setWinner(2);
         }
         return {
@@ -79,7 +86,10 @@ function App() {
   const bankCurrentScore = (score) => {
     if (+activePlayer === 1) {
       setPlayerOne((prevState) => {
-        if (+prevState.playerTotalScore + prevState.playerScore > 20) {
+        if (
+          +prevState.playerTotalScore + prevState.playerScore >=
+          winningNumber
+        ) {
           setWinner(1);
         }
 
@@ -91,7 +101,10 @@ function App() {
     }
     if (+activePlayer === 2) {
       setPlayerTwo((prevState) => {
-        if (+prevState.playerTotalScore + prevState.playerScore > 20) {
+        if (
+          +prevState.playerTotalScore + prevState.playerScore >=
+          winningNumber
+        ) {
           setWinner(2);
         }
         return {
@@ -101,6 +114,7 @@ function App() {
       });
     }
   };
+
   return (
     <>
       <div className='container'>
